@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Page Q&A Assistant",
+  "version": "1.0",
+  "description": "AI assistant for Q&A on any webpage",
+  "permissions": ["activeTab", "tabs", "action"],
+  "host_permissions": ["activeTab", "tabs", "action"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }],
+  "action": {
+    "default_title": "Open Q&A Assistant",
+    "default_popup": "sidepanel.html"
+  },
+  "commands": {
+    "open-with-selection": {
+      "suggested_key": {
+        "default": "Alt+Q",
+        "mac": "Alt+Q"
+      },
+      "description": "Open Q&A Assistant with selected text (Mac: Option+Q)"
+    }
+  }
+}
