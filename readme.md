@@ -1,4 +1,4 @@
-# Page Q&A Assistant
+# PageBot - Webpage Q&A Assistant
 
 Ask questions about any webpage using AI. Press Alt+Q to open a floating chatbot.
 
