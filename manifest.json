@@ -3,18 +3,17 @@
   "name": "Page Q&A Assistant",
   "version": "1.0",
   "description": "AI assistant for Q&A on any webpage",
-  "permissions": ["activeTab", "tabs", "action"],
-  "host_permissions": ["activeTab", "tabs", "action"],
+  "permissions": ["activeTab", "tabs", "storage", "scripting"],
+  "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [{
     "matches": ["<all_urls>"],
-    "js": ["content.js"]
+    "js": ["conversation-manager.js", "overlay.js", "content.js"]
   }],
   "action": {
-    "default_title": "Open Q&A Assistant",
-    "default_popup": "sidepanel.html"
+    "default_title": "Open Q&A Assistant (Alt+Q)"
   },
   "commands": {
     "open-with-selection": {
